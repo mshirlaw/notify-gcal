@@ -63,6 +63,14 @@ Once `manifest.json` has a real client ID (not the placeholder), this is all tha
 - Click the extension icon in the toolbar and click "Sign in with Google"
 - Approve the requested read-only calendar access
 
+### 3. Enable notifications for Chrome
+
+The extension can do everything right and still show nothing if Chrome itself isn't allowed to display notifications. Check both of these:
+
+- **macOS**: System Settings → Notifications → find **Google Chrome** (or Brave, or whichever Chromium browser you loaded this in) and make sure "Allow Notifications" is on and the alert style isn't set to "None". If you see more than one entry with the same browser name (common after browser updates), enable all of them, since it's not always obvious which one is actually running
+- **Chrome**: go to `chrome://settings/content/notifications` and confirm notifications aren't blocked
+- Also make sure **Focus/Do Not Disturb** isn't on, since it silently suppresses banners without any error
+
 ## Usage
 
 - Click the extension icon to open the popup
@@ -82,4 +90,4 @@ Once `manifest.json` has a real client ID (not the placeholder), this is all tha
 - **Sign-in fails**: double-check the OAuth client ID in `manifest.json` matches the one from Google Cloud Console
 - **Extension ID on `chrome://extensions/` isn't `hpealioapkmpepakpmnjbelpcegdaihn`**: the `key` field in `manifest.json` was changed, removed, or corrupted. Restore it from version control, then reload the extension
 - **"Access blocked" during sign-in**: make sure your Google account is added as a test user on the OAuth consent screen, or publish the consent screen if it's stuck in testing
-- **No notifications**: check `chrome://extensions/` > "service worker" link on the extension's card for console errors, and confirm macOS notification permissions are enabled for Chrome
+- **No notifications**: check `chrome://extensions/` > "service worker" link on the extension's card. If you see a `Notification created with id ...` line but no banner ever appears, the extension worked and this is a macOS/Chrome notification permissions problem, see "Enable notifications for Chrome" above. Also check Notification Center itself (click the date/time in the menu bar) since the notification may have arrived there silently if the alert style is set to "None"
