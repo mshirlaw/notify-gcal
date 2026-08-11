@@ -240,6 +240,7 @@ function buildNotificationOptions(event) {
     message: `Starts at ${startTime}${event.location ? ` · ${event.location}` : ""}`,
     contextMessage: "Google Calendar",
     priority: 2,
+    requireInteraction: true,
     buttons: getVideoConferenceLink(event) ? [{ title: "Join Meeting" }] : [],
   };
 }
