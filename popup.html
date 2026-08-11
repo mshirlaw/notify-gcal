@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/popup.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h2>Notify GCal</h2>
+
+            <div id="accountStatus" class="account-status">Checking sign-in status...</div>
+
+            <button id="signInButton">Sign in with Google</button>
+            <button id="signOutButton" class="hidden">Sign out</button>
+
+            <div class="form-group">
+                <label for="leadMinutes">Notify me:</label>
+                <select id="leadMinutes">
+                    <option value="0">Right when it starts</option>
+                    <option value="1">1 minute before</option>
+                    <option value="2">2 minutes before</option>
+                    <option value="5">5 minutes before</option>
+                    <option value="10">10 minutes before</option>
+                </select>
+            </div>
+
+            <button id="checkNowButton">Check now</button>
+
+            <div id="status" class="status"></div>
+            <ul id="todaysEvents" class="event-list"></ul>
+        </div>
+        <script src="js/popup.js"></script>
+    </body>
+</html>

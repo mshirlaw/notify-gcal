@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Notify GCal",
+  "version": "1.0",
+  "description": "Native macOS/Chrome notifications when a Google Calendar meeting begins",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2dshe6LDAUYASuhxSVu5WNc5WxTg9Za+VwvmotNH0UDlcR15JSBUcpcAhbkiaZcSuDjCbbM6g7fO38we5B5AQ3ZMilRN1u+/Tsjz8mX/+e6NhClrV5CvJqraTYFUT+IIzA/uPzvWt4HAOByN5DJtrQotrHoIwi655S7aBBZJlruAxx84Fata+w1ZYtzYGH7UwzjeI3KxeHB2UWICfZIl4Kd5kfUSz/Oy2sVB6OQwewoOI+RbTo4S2xFYOWDOAOlBv7XzT7bX6IPZKIg7JXSV0fd3S7FC5RmVFGSPssVY6MFCVe40lmcff6B9T3c904C5kFfni0qD177FGIgzaNO7RQIDAQAB",
+  "permissions": ["identity", "alarms", "notifications", "storage", "offscreen"],
+  "host_permissions": ["https://www.googleapis.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Notify GCal",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "oauth2": {
+    "client_id": "23901072191-s1p6s55bntq2fa52hc5dbc07u8n6p5ht.apps.googleusercontent.com",
+    "scopes": ["https://www.googleapis.com/auth/calendar.readonly"]
+  }
+}
